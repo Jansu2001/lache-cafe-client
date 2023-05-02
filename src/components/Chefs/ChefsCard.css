@@ -1,6 +1,15 @@
 .card-footer{
 position: relative;
 height: 50px;
+text-align: center;
+align-items: center;
+}
+.card-footer a{
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
 }
 .view-btn{
     position: absolute;
@@ -14,4 +23,8 @@ height: 50px;
     height: 100%;
     top: 0;
     color: white;
+}
+.view-btn:hover{
+    background: gray;
+
 }

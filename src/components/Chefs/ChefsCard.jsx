@@ -2,9 +2,11 @@ import React from 'react';
 import './ChefsCard.css'
 
 import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ChefsCard = ({ chefs }) => {
     const { chef_name, chef_picture, recipes, experience, likes } = chefs.chef
+    
     return (
 
 
@@ -13,14 +15,15 @@ const ChefsCard = ({ chefs }) => {
                 <Card.Img variant="top" src={chef_picture} />
                 <Card.Body>
                     <Card.Title>{chef_name}</Card.Title>
-                    <Card.Text>
+                    <div>
                         <p>Experience: {experience}</p>
                         <p>Likes: {likes}</p>
                         <p>Recipes: {recipes}</p>
-                    </Card.Text>
+                        <p>{chefs.chef_id}</p>
+                    </div>
                 </Card.Body>
                 <Card.Footer className='card-footer'>
-                    <button className='view-btn'>View Recipes</button>
+                    <p><Link to={`/chefs-details/${chefs.chef_id}`} className='view-btn'>View Recipes {chef_name}</Link></p>
                 </Card.Footer>
             </Card>
         </div>

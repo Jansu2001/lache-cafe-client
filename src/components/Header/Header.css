@@ -12,6 +12,12 @@
     color: white;
     text-decoration: none;
 }
+.profile{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
 .header a{
     color: white;
     text-decoration: none;

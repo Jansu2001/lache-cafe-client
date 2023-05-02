@@ -1,31 +1,36 @@
-import React, { useContext, useState } from 'react';
+
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-// import { AuthContext } from '../../../Providers/AuthProvider';
+import { AuthContext } from '../../AuthProvider/AuthProvider/AuthProvider';
+import { useContext, useState } from 'react';
 
 const Register = () => {
-    // const { createUser } = useContext(AuthContext);
+    const { signUpUser } = useContext(AuthContext);
     // const [accepted, setAccepted] = useState(false)
+    const [success,setSuccess]=useState('')
+    const [error, setError] = useState('')
 
 
-    // const handleRegister = (event) => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const name = form.name.value;
-    //     const photo = form.photo.value;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
+    const handleRegister = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
 
-    //     console.log(name, photo, email, password);
-    //     createUser(email, password)
-    //         .then(result => {
-    //             const createdUser = result.user;
-    //             console.log(createdUser);
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //         })
-    // }
+
+        console.log(name, photo, email, password);
+
+        signUpUser(email, password)
+            .then(result => {
+                const createdUser = result.user;
+                setSuccess('user Success Fully Created')
+            })
+            .catch(error => {
+                setError(error);
+            })
+    }
     // // Handle setAccepted
     // const handleAccepted = (event) => {
     //     setAccepted(event.target.checked);
@@ -35,7 +40,7 @@ const Register = () => {
     return (
         <Container className='mx-auto w-25'>
             <h3>Please Register </h3>
-            <Form >
+            <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control type="name" name='name' placeholder="Enter name" required />
@@ -56,13 +61,13 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check
                         // onClick={handleAccepted}
                         type="checkbox"
                         name='accept'
                         label='' />
-                </Form.Group>
+                </Form.Group> */}
                 <Button variant="primary"
                     // disabled={!accepted}
                     type="submit">
@@ -73,12 +78,13 @@ const Register = () => {
                     Already have an account? <Link to='/login'>Login</Link>
                 </Form.Text>
                 <Form.Text className="text-success">
-
+                {success}
                 </Form.Text>
                 <Form.Text className="text-danger">
-
+                    {error}
                 </Form.Text>
             </Form>
+
         </Container>
     );
 };
