@@ -1,0 +1,17 @@
+.card-footer{
+position: relative;
+height: 50px;
+}
+.view-btn{
+    position: absolute;
+    background: #607f89;
+    border: 1px solid #ffffff;
+    border-radius: 0px 0px 8px 8px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    top: 0;
+    color: white;
+}
