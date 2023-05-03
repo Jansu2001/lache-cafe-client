@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './Header.css'
+import './ActiveHeader.css'
 import { NavLink } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import { AuthContext } from '../../AuthProvider/AuthProvider/AuthProvider';
@@ -15,7 +15,6 @@ const ActiveHeader = () => {
             <Nav className='header'>
 
                 <h1 className='logo ps-5'>Lache Cafe</h1>
-                <p className='text-white'>{user && <p>{user.email}</p>}</p>
                 <div>
                     {/* <li>
                         <NavLink to='/blogs' className={({isActive})=>isActive?'text-warning':''}>To Blogs</NavLink>

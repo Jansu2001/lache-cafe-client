@@ -1,0 +1,21 @@
+.chef-info{
+    justify-content: space-between;
+}
+.info-left{
+    text-align: start;
+    margin: auto;
+
+}
+.title{
+    font-size: 100px;
+    font-weight: bold;
+}
+.chef-img{
+    width: 45%;
+    height: 600px;
+    border-radius: 30px;
+}
+.recipe-info{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}

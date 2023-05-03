@@ -57,9 +57,6 @@ const Login = () => {
             })
 
     }
-
-
-    console.log(error);
     return (
         <Container className='mx-auto w-25'>
             <h3>Please Login </h3>
@@ -74,9 +71,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+
                 <Button variant="primary" type="submit">
                     Login
                 </Button>

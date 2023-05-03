@@ -44,12 +44,13 @@ const router = createBrowserRouter([
           <PrivateRoutes>
             <ChefsDetails></ChefsDetails>,
           </PrivateRoutes>,
-        loader: ({ params }) => fetch(`https://chef-recipe-server-jansu2001.vercel.app/chefs/${params.id}`)
+        loader: ({ params }) => 
+        fetch (`https://chef-recipe-server-jansu2001.vercel.app/chefs/${params.id}`)
       }
     ]
 
   }
-
+  
 ]);
 
 
