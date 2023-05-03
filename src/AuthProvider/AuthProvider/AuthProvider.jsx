@@ -1,16 +1,17 @@
 import React, { createContext, useEffect, useState } from 'react';
 
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from '../../firebase/firebase.config';
 
 export const AuthContext = createContext(null)
 const auth = getAuth(app);
 
 
-
+const googleProvider = new GoogleAuthProvider();
+const gitHubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
 
-    const [user,setUser] =useState(null)
+    const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
 
     const signUpUser = (email, password) => {
@@ -18,25 +19,35 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
-    const signInUser=(email,password)=>{
+    const signInUser = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const signOutUser=()=>{
+    const signOutUser = () => {
         return signOut(auth)
     }
+    
 
-    useEffect(()=>{
-        const unSubscribe= onAuthStateChanged(auth, (currentUser)=>{
+    const loginWithGoogle = () => {
+        return signInWithPopup(auth, googleProvider)
+    }
+
+    const loginWithGitHub = () => {
+        return signInWithPopup(auth, gitHubProvider)
+    }
+
+
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
             setLoading(false)
         })
-        return()=>{
+        return () => {
             return unSubscribe;
         }
 
-    },[])
+    }, [])
 
 
     const authInfo = {
@@ -44,7 +55,10 @@ const AuthProvider = ({ children }) => {
         loading,
         signUpUser,
         signInUser,
-        signOutUser
+        signOutUser,
+        loginWithGoogle,
+        loginWithGitHub,
+        
     }
 
     return (

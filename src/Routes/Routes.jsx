@@ -8,18 +8,18 @@ import Home from "../components/Home/Home";
 import Main from "./Main";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
-import Header from "../components/Header/Header";
+// import Header from "../components/Header/Header";
 import Another from "../Another/Another";
 import ChefsDetails from "../Another/ChefsDetails/ChefsDetails";
 import PrivateRoutes from "../AuthProvider/PrivateRoutes/PrivateRoutes";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import Blogs from "../components/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
     errorElement:<ErrorPage></ErrorPage>,
-
   },
   {
     path: '/',
@@ -35,11 +35,15 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
+        path:'/blogs',
+        element:<Blogs></Blogs>
+      },
+      {
         path: '/chefs-details/:id',
         element:
-          // <PrivateRoutes>
+          <PrivateRoutes>
             <ChefsDetails></ChefsDetails>,
-          // </PrivateRoutes>,
+          </PrivateRoutes>,
         loader: ({ params }) => fetch(`https://chef-recipe-server-jansu2001.vercel.app/chefs/${params.id}`)
       }
     ]

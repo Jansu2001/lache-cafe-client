@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../Header/Header';
 import Banner from '../Banner/Banner';
 import ChefsCard from '../Chefs/ChefsCard';
 import './Home.css'
 import Footer from '../Footer/Footer';
+import ActiveHeader from '../Header/ActiveHeader';
 
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
     // console.log(chefsData);
     return (
         <div>
-            <Header></Header>
+            <ActiveHeader></ActiveHeader>
             <Banner></Banner>
             <section className='chefs-card'>
 

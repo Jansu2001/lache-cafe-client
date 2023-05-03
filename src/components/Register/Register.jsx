@@ -3,11 +3,12 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider/AuthProvider';
 import { useContext, useState } from 'react';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
-    const { signUpUser } = useContext(AuthContext);
+    const { signUpUser, displayUser } = useContext(AuthContext);
     // const [accepted, setAccepted] = useState(false)
-    const [success,setSuccess]=useState('')
+    const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
 
 
@@ -26,11 +27,26 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 setSuccess('user Success Fully Created')
+                updatedProfiles(createdUser, name, photo)
             })
             .catch(error => {
                 setError(error);
             })
     }
+
+    const updatedProfiles = (createdUser, name, photoURL) => {
+        updateProfile(createdUser, {
+            displayName: name,
+            photoURL: photoURL
+        })
+            .then(() => {
+                console.log('user profile updateed');
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+    }
+
     // // Handle setAccepted
     // const handleAccepted = (event) => {
     //     setAccepted(event.target.checked);
@@ -78,7 +94,7 @@ const Register = () => {
                     Already have an account? <Link to='/login'>Login</Link>
                 </Form.Text>
                 <Form.Text className="text-success">
-                {success}
+                    {success}
                 </Form.Text>
                 <Form.Text className="text-danger">
                     {error}
