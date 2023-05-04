@@ -12,17 +12,12 @@ import Service from './Service/Service';
 const Home = () => {
 
     const [chefsData, setChefsData] = useState([])
-    const [isLoading,setIsLoading]=useState(true)
     useEffect(() => {
         fetch('https://chef-recipe-server-jansu2001.vercel.app/chefs')
             .then(res => res.json())
             .then(data => setChefsData(data))
-            setIsLoading(false)
-
     }, [])
-    if(isLoading){
-        return <Spinner animation="border" variant="warning" />
-    }
+   
     return (
         <div>
             <ActiveHeader></ActiveHeader>
