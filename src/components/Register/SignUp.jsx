@@ -3,10 +3,10 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider/AuthProvider';
 import { useContext, useState } from 'react';
-import { updateProfile } from 'firebase/auth';
+import {  updateProfile } from 'firebase/auth';
 
-const Register = () => {
-    const { signUpUser,signOutUser } = useContext(AuthContext);
+const SignUp = () => {
+    const { signUpUser } = useContext(AuthContext);
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
 
@@ -19,25 +19,19 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        if(password.length <6 ){
-            setSuccess('')
-            setError('password shoud be 6 characters')
-            return
-        }
+
         console.log(name, photo, email, password);
 
         signUpUser(email, password)
             .then(result => {
-                setError('')
                 const createdUser = result.user;
                 setSuccess('user Success Fully Created')
                 console.log(createdUser);
-                signOutUser(null)
+
                 updatedProfile(createdUser, name, photo)
             })
             .catch(error => {
-                setSuccess('')
-                setError(error.message)
+                setError(error);
             })
     }
 
@@ -77,12 +71,6 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
-                <p className="text-success">
-                    {success}
-                </p>
-                <p className="text-danger">
-                    {error}
-                </p>
                 <Button variant="primary"
                     type="submit">
                     Register
@@ -91,11 +79,16 @@ const Register = () => {
                 <Form.Text className="text-secondary">
                     Already have an account? <Link to='/login'>Login</Link>
                 </Form.Text>
-                
+                <Form.Text className="text-success">
+                    {success}
+                </Form.Text>
+                <Form.Text className="text-danger">
+                    {error}
+                </Form.Text>
             </Form>
 
         </Container>
     );
 };
 
-export default Register;
+export default SignUp;

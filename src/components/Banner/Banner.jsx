@@ -9,7 +9,7 @@ const Banner = () => {
                 <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100 height"
-                        src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=892&q=80"
+                        src="https://images.unsplash.com/photo-1517178313064-9447953f46e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=852&q=80"
                         alt="First slide"
                     />
                     <Carousel.Caption>

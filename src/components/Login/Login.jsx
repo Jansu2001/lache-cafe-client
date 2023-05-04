@@ -21,6 +21,7 @@ const Login = () => {
         console.log(email, password);
         signInUser(email, password)
             .then(result => {
+                setError('')
                 const signedUser = result.user;
                 navigate(from, { replace: true })
                 console.log(signedUser);
@@ -28,6 +29,7 @@ const Login = () => {
 
             })
             .catch(error => {
+                setSuccess('')
                 setError(error.message);
             })
 
@@ -38,6 +40,7 @@ const Login = () => {
             .then(result => {
                 const loogedUser = result.user;
                 console.log(loogedUser);
+                navigate(from, { replace: true })
                 setSuccess('Success to Login with Google')
             })
             .catch(error => {
@@ -50,6 +53,7 @@ const Login = () => {
             .then(result => {
                 const loogedUser = result.user;
                 console.log(loogedUser);
+                navigate(from, { replace: true })
                 setSuccess('Success to Login with GitHub')
             })
             .catch(error => {
@@ -71,7 +75,13 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
-
+                <Form.Text className="text-success">
+                    {success}
+                </Form.Text>
+                <Form.Text className="text-danger">
+                    {error}
+                </Form.Text>
+                <br />
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
@@ -79,17 +89,14 @@ const Login = () => {
                 <Form.Text className="text-secondary">
                     Don't have an account? <Link to='/register'>Register</Link>
                 </Form.Text>
-                <Form.Text className="text-success">
-                    {success}
-                </Form.Text>
-                <Form.Text className="text-danger">
-                    {error}
-                </Form.Text>
+
             </Form>
             <div className='mt-2'>
                 <h3>Login In With</h3>
-                <Button onClick={handleLoginWithGoogle} variant='outline-primary'>Login with Google</Button>
-                <Button onClick={handleLoginWithGitHub} variant='outline-secondary' className='ms-4'>Login with GitHub</Button>
+
+                <Button onClick={handleLoginWithGoogle} variant='outline-primary' >Login with Google</Button>
+                <Button onClick={handleLoginWithGitHub} variant='outline-secondary' >Login with GitHub</Button>
+
             </div>
         </Container>
     );

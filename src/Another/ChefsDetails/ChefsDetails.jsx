@@ -5,8 +5,6 @@ import './ChefsDetails.css'
 import RecipeDetails from './RecipeDetails/RecipeDetails';
 
 const ChefsDetails = () => {
-    // const {id}=useParams()
-    // console.log(id);
     const ChefDetails = useLoaderData();
     const { chef_picture, chef_name, likes, experience, recipes } = ChefDetails.chef;
     const recipeDetails = ChefDetails.recipes;

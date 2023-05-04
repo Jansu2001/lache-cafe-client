@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ChefsCard.css'
 
-import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap';
+import { Card, } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const ChefsCard = ({ chefs }) => {
     const { chef_name, chef_picture, recipes, experience, likes } = chefs.chef
-    
+ 
 
+    
     return (
         <div >
             <Card>

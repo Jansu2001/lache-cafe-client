@@ -4,24 +4,31 @@ import ChefsCard from '../Chefs/ChefsCard';
 import './Home.css'
 import Footer from '../Footer/Footer';
 import ActiveHeader from '../Header/ActiveHeader';
+import { Spinner } from 'react-bootstrap';
+import BestRecipe from './BestRecipe/BestRecipe';
+import Service from './Service/Service';
 
 
 const Home = () => {
 
     const [chefsData, setChefsData] = useState([])
-
-
+    const [isLoading,setIsLoading]=useState(true)
     useEffect(() => {
         fetch('https://chef-recipe-server-jansu2001.vercel.app/chefs')
             .then(res => res.json())
             .then(data => setChefsData(data))
+            setIsLoading(false)
 
     }, [])
-    // console.log(chefsData);
+    if(isLoading){
+        return <Spinner animation="border" variant="warning" />
+    }
     return (
         <div>
             <ActiveHeader></ActiveHeader>
             <Banner></Banner>
+            <Service></Service>
+            <BestRecipe></BestRecipe>
             <section className='chefs-card'>
 
                 {

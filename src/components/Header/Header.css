@@ -1,0 +1,28 @@
+.header{
+    background-color: #1C2B35;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 90px;
+    height: 70px;
+    
+}
+.logo{
+    color: white;
+    text-decoration: none;
+}
+.profile{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+.header a{
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+}
+.text-email{
+    color: white;
+}

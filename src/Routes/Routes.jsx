@@ -8,7 +8,6 @@ import Home from "../components/Home/Home";
 import Main from "./Main";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
-// import Header from "../components/Header/Header";
 import Another from "../Another/Another";
 import ChefsDetails from "../Another/ChefsDetails/ChefsDetails";
 import PrivateRoutes from "../AuthProvider/PrivateRoutes/PrivateRoutes";
@@ -50,7 +49,6 @@ const router = createBrowserRouter([
     ]
 
   }
-  
 ]);
 
 

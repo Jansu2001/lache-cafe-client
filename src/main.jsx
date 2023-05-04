@@ -12,8 +12,8 @@ import { ToastContainer } from 'react-toastify'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <AuthProvider><RouterProvider router={router}></RouterProvider></AuthProvider>
-   <ToastContainer></ToastContainer>
-   
+    <AuthProvider><RouterProvider router={router}></RouterProvider></AuthProvider>
+    <ToastContainer></ToastContainer>
+
   </React.StrictMode>,
 )
