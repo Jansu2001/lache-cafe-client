@@ -6,7 +6,7 @@ const BestRecipe = () => {
     return (
         <div>
             <h1 className='text-center fs-1 fw-bold mt-4'>Our Menu</h1>
-            <div className='best-container pt-4'>
+            <div className='best-container pt-4 px-3 gap-3'>
                 <Card>
                     <Card.Img className='img' variant="top" src="https://images.unsplash.com/photo-1600713529234-2ead3b91c6eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" />
                     <Card.Body>

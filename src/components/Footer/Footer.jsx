@@ -1,28 +1,35 @@
 import React from 'react';
 import './Footer.css'
-import { Card } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 
 const Footer = () => {
     return (
         <div className='main-footer'>
-                <Card.Footer className="footer text-center pt-4">
-                    <div>
-                        <h2>Lache Cafe</h2>
-                        <p>copyright by Lache Cafe</p>
-                    </div>
-                    <div>
-                        <h1>Location</h1>                        
-                        <p>444, quens ave</p>
-                        <p>Maijdee, United State of Noakhali</p>
-                        <p>Phone: +8809638741295</p>
-                        <p>Emial: mrjansu23@gmail.com</p>
-                    </div>
-                    <div>
-                        <h2>About the Company</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur <br />  elit. Odit ea repellat mollitia <br />  reprehenderit exercitationem explicabo,<br /> nihil eveniet nostrum quis reiciendis. <br /> Libero odit sunt tempore</p>
-                    </div>
-                </Card.Footer>
-            
+            <Container className='pt-4'>
+                <Row>
+                    <Col md={6}>
+                        <h2>Our Restaurant</h2>
+                        <p>"Welcome to [Lache Cafe], where every dish is a masterpiece. Our chefs use only the freshest ingredients to create delicious, mouth-watering meals that will satisfy any craving. From savory entrees to decadent desserts, we offer a wide variety of options that are sure to please everyone.
+                             Come dine with us and experience the perfect blend of taste, quality, and hospitality."</p>
+
+                    </Col>
+                    <Col md={6}>
+                        <ul className="list-unstyled">
+                            <h2>Location</h2>
+                            <li> 123 Main Street, Anytown, USA</li>
+                            <li>Phone: 09638741295</li>
+                            <li>Email: info@LacheCafe.com</li>
+                        </ul>
+                    </Col>
+                </Row>
+                <hr />
+                <Row>
+                    <Col md={12}>
+                        <p className="text-center"> @ 2023 Our Restaurant. All rights reserved.</p>
+                    </Col>
+                </Row>
+            </Container>
+
 
         </div>
     );
