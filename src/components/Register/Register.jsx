@@ -28,6 +28,7 @@ const Register = () => {
 
         signUpUser(email, password)
             .then(result => {
+                form.reset()
                 setError('')
                 const createdUser = result.user;
                 setSuccess('user Success Fully Created')
