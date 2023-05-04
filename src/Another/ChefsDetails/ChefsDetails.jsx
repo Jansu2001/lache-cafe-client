@@ -6,7 +6,7 @@ import RecipeDetails from './RecipeDetails/RecipeDetails';
 
 const ChefsDetails = () => {
     const ChefDetails = useLoaderData();
-    const { chef_picture, chef_name, likes, experience, recipes } = ChefDetails.chef;
+    const { chef_picture,chef_description, chef_name, likes, experience, recipes } = ChefDetails.chef;
     const recipeDetails = ChefDetails.recipes;
     return (
         <div>
@@ -16,6 +16,8 @@ const ChefsDetails = () => {
                     <h4>Likes: {likes}</h4>
                     <h4>Recipes: {recipes}</h4>
                     <h4>experience: {experience}</h4>
+                    <h2><small> {chef_description}</small>
+                    </h2>
 
                 </div>
                 <img className='chef-img' src={chef_picture} alt="" />
