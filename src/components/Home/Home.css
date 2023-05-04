@@ -1,8 +1,7 @@
 .chefs-card {
-    margin-top: 80px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-top: 20px;
+    padding: 0 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 40px;
+    grid-gap: 20px;
 }

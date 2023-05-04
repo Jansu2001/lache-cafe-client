@@ -9,8 +9,11 @@ const Footer = () => {
                 <Row>
                     <Col md={6}>
                         <h2>Our Restaurant</h2>
-                        <p>"Welcome to [Lache Cafe], where every dish is a masterpiece. Our chefs use only the freshest ingredients to create delicious, mouth-watering meals that will satisfy any craving. From savory entrees to decadent desserts, we offer a wide variety of options that are sure to please everyone.
-                             Come dine with us and experience the perfect blend of taste, quality, and hospitality."</p>
+                        <p>Welcome to Lache Cafe, where every dish is a masterpiece. 
+                            Our chefs use only the freshest ingredients to create delicious, 
+                            mouth-watering meals that will satisfy any craving. 
+                            From savory entrees to decadent desserts, we offer a wide variety of options that are sure to please everyone.
+                             Come dine with us and experience the perfect blend of taste, quality, and hospitality.</p>
 
                     </Col>
                     <Col md={6}>

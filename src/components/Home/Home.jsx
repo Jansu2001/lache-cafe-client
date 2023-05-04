@@ -24,6 +24,7 @@ const Home = () => {
             <Banner></Banner>
             <Service></Service>
             <BestRecipe></BestRecipe>
+                <h1 className='text-center fs-1 fw-bold pt-4'>Our Professional</h1>
             <section className='chefs-card'>
 
                 {

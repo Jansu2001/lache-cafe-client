@@ -7,18 +7,16 @@ import { Link } from 'react-router-dom';
 const ChefsCard = ({ chefs }) => {
     const { chef_name, chef_picture, recipes, experience, likes } = chefs.chef
  
-
-    
     return (
         <div >
             <Card>
-                <Card.Img variant="top" src={chef_picture} />
+                <Card.Img className='p-2' variant="top" src={chef_picture} />
                 <Card.Body>
                     <Card.Title>{chef_name}</Card.Title>
                     <div>
-                        <p>Experience: {experience}</p>
-                        <p>Likes: {likes}</p>
-                        <p>Recipes: {recipes}</p>
+                        <p className='m-1'>Experience: {experience}</p>
+                        <p className='m-1'>Likes: {likes}</p>
+                        <p className='m-1'>Recipes: {recipes}</p>
                     </div>
                 </Card.Body>
                 <Card.Footer className='card-footer'>

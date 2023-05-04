@@ -8,12 +8,12 @@ Documentation Link -> [Vercel API](https://chef-recipe-server-jansu2001.vercel.a
 ## React Router Dom v6.4 
 
 Documentation Link -> [Link](https://reactrouter.com/en/main/start/overview)
-<!-- 
+
 ## React Router Dom v6.4 
 
-Documentation Link -> [Link](https://react-bootstrap.github.io/getting-started/introduction/) -->
+Documentation Link -> [Link](https://react-bootstrap.github.io/getting-started/introduction/)
 
-<!-- ## Resources & Credits
+## Resources & Credits
 
-Icon -> [React-Hot-Toast](https://react-hot-toast.com/) -->
+Icon -> [React-Hot-Toast](https://react-hot-toast.com/)
 
