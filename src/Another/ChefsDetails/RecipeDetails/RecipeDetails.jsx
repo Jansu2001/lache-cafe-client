@@ -24,9 +24,9 @@ const RecipeDetails = ({ recipe }) => {
                         </Card.Text>
                     </Card.Body>
                     <Card.Body className='d-flex '>
-                        <div>
+                        <div >
                             <Card.Title>Ingredients</Card.Title>
-                            <ul>
+                            <ul >
                                 <li>{ingredients[0]}</li>
                                 <li>{ingredients[3]}</li>
                                 <li>{ingredients[1]}</li>
@@ -34,7 +34,7 @@ const RecipeDetails = ({ recipe }) => {
                                 <li>{ingredients[3]}</li>
                             </ul>
                         </div>
-                        <Card.Title>Rating: {rating}</Card.Title>
+                        <Card.Title className='ms-4'>Rating: {rating}</Card.Title>
                     </Card.Body>
                     <Card.Footer className='card-footer'>
                         <p><Button disabled={toastDisable} onClick={handleFavourite} className='view-btn'>Add to Favourite</Button></p>
